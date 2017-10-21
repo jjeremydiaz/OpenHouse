@@ -4,13 +4,10 @@ Then /I should see "(.*)" before "(.*)"/ do |e1, e2|
   expect(page.body.index(e1) < page.body.index(e2))
 end
 
-Then /account "(.*)" should( not)? exist/ do |u, should_not_exist|
-  user = User.find_by(username: u)
-  if should_not_exist
-    expect(user == nil)
-  else
-    expect(user != nil)
-  end
+Then /account with email "(.*)" should( not)? exist/ do |e, should_not_exist|
+  user = User.find_by(email: e)
+  expect(user.email == e)
+  expect(user.password == 1234)
 end
 
 Then /account "(.*)" exists/ do |u|

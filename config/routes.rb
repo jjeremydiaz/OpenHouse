@@ -57,10 +57,5 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
   
-  resources :users
   get '/', to: 'main#show', as: 'root'
-  get '/logout', to: 'main#logout', as: 'logout'
-  get '/login', to: 'main#login_page', as: 'login_page'
-  post '/login', to: 'main#login', as: 'login'
-  
 end
