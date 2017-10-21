@@ -1,3 +1,4 @@
 %p= flash[:alert] if flash[:alert]
 
 %h1 OpenHouse Homepage
+/= link_to 'Edit Profile', edit_profile_path(@user.id)

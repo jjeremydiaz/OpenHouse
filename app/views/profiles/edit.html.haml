@@ -1,0 +1,15 @@
+%h1 Edit Profile Information
+
+= form_tag profile_path(@current_user), :method => :put do
+
+  = label :user, :name, 'Name'
+  = text_field :user, 'name', :value => @current_user.name || ""
+  
+  = label :user, :address, 'Address'
+  = text_field :user, 'address', :value => @current_user.address || ""
+
+  = label :user, :credit_card, 'Credit Card'
+  = text_field :user, 'credit_card', :value => @current_user.credit_card || ""
+
+  = submit_tag 'Submit Changes'
+    
