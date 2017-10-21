@@ -4,13 +4,18 @@ class UsersController < ApplicationController
     end
 
     def new
+        #show create new user template
     end
     
     def create
-        session[:old_params] = params
+        @user = User.find_by(username: params[:user][:username])
+        if @user != nil
+            flash[:alert] = "Username #{@user.username} already taken."
+            redirect_to new_user_path and return
+        end
+        
         @user = User.create!(user_params)
-        flash[:notice] = "#{@user.username} was successfully created."
-        flash[:username] = params[:username]
+        flash[:alert] = "Account #{@user.username} was successfully created."
         session[:username] = @user.username
         redirect_to login_path
     end
