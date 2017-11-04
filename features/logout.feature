@@ -16,7 +16,8 @@ Scenario: Host can log out after being logged in
     Then I should see "Logged Out"
     And I should not be logged in
 
-# Scenario: Host cannot log out if he already logged out in another tab
+# Scenario: Host cannot log out if he already logged out in another tab (Note: this test doesn't work because logging in is dependent on cookies, and opening 2 browser doesnt share cookies
+#                                                                               While opening 2 tabs does share cookies, it is equivalent of using 1 browser, thus we dont need to test it.)
 #    Given I am logged in
 #    And I have OpenHouse open in two browser tabs
 #    And I am on the OpenHouse home page
@@ -27,6 +28,6 @@ Scenario: Host can log out after being logged in
 #    And I should be logged out
 
 Scenario: Host cannot log out if not logged in
-    Given that I should not be logged in
+    Given I should not be logged in
     And I am on the home page
     Then I should not see "Log Out"
