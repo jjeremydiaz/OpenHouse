@@ -170,7 +170,20 @@ describe UsersController do
 			expect(assigns(:user)).to eq(@user)
 		end
 	end
-	#describe ''
+	describe 'Update host' do
+		it describe 'Update host' do
+			post :create, :user => @parameters
+			@user = User.find_by(:email => "sodapop@pepsi.com")
+			#puts(@user.id)
+			expect{
+				put :update, :id => @user.id
+				expect(update_picture(:profile_picture))
+				expect(update_picture(:house_picture))
+				expect(@user.update_attributes(user_params))
+			}
+			@user.save!
+		end
+	end
 end
 
 
