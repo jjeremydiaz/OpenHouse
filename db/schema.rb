@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171108004422) do
+ActiveRecord::Schema.define(version: 20171111062429) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 20171108004422) do
     t.string  "available_time"
     t.float   "latitude"
     t.float   "longitude"
+    t.string  "amenities",              default: [], array: true
   end
 
 end
