@@ -39,9 +39,11 @@ module UsersHelper
     return if update_picture(:profile_picture)
     return if update_picture(:house_picture)
     return if update_picture(:more_picture)
+    unless amenity_params.empty?
+        @user.amenity_list.update_attributes(amenity_params)
+        @user.amenity_list.save!
+    end
     @user.update_attributes(user_params)
-    @user.amenity_list.update_attributes(amenity_params)
-    @user.amenity_list.save!
     @user.save!
     flash[:notice] = "Your account has been updated."
   end
