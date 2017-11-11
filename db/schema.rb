@@ -11,10 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171111062429) do
+ActiveRecord::Schema.define(version: 20171111090645) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "amenity_lists", force: :cascade do |t|
+    t.boolean "wifi"
+    t.boolean "couch"
+    t.integer "user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string  "email"
@@ -45,7 +51,9 @@ ActiveRecord::Schema.define(version: 20171111062429) do
     t.string  "available_time"
     t.float   "latitude"
     t.float   "longitude"
-    t.string  "amenities",              default: [], array: true
+    t.integer "amenity_list_id"
   end
 
+  add_foreign_key "amenity_lists", "users"
+  add_foreign_key "users", "amenity_lists"
 end
