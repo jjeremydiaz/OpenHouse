@@ -100,11 +100,52 @@
 }
 
 .header-search {
-  color: #6e6e6e;
+  position: fixed;
+  width: 100%;
   padding: 25px;
-  border-bottom: 1px solid #e7e7e7;
-  margin-top: 0px;
+  margin-top: 70px;
   margin-bottom: 0px;
+  color: #6e6e6e;
+  background-color: #fff;
+  border-bottom: 1px solid #e7e7e7;
+}
+
+#listings-box {
+  width: 60%;
+  margin-top: 140px;
+}
+
+.listing-link:hover {
+  text-decoration: none;
+}
+
+.listing {
+  width: 49.5%;
+  padding: 25px;
+  display: inline-block;
+  border-radius: 5px 5px 5px 5px
+}
+
+.listing:hover {
+  background-color: #eeeeee;
+}
+
+.listing-details {
+  padding: 5px;
+}
+
+.listing-address {
+  margin-top: 8px;
+  margin-bottom: 8px;
+  font-weight: 400;
+  color: #2FB2C2;
+}
+
+.listing-price {
+  margin-top: 8px;
+  margin-bottom: 8px;
+  font-weight: 200;
+  color: #6e6e6e;
 }
 
 /* STANDARD BOOTSTRAP LIBRARY */
