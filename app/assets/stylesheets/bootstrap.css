@@ -53,7 +53,7 @@
 .login-box, .logout-box, .signup-box {
   padding: 50px;
   width: 1000px;
-  margin: auto;
+  margin: 70px auto;
   color: #6e6e6e
 }
 
@@ -75,12 +75,20 @@
 .homepage-box {
   width: 650px;
   padding: 50px;
-  margin: auto;
+  margin: 70px auto;
   color: #6e6e6e;
 }
 
 #homepage-header-1 {
   color: #2FB2C2;
+}
+
+.subheader {
+  font-weight: 300;
+}
+
+.signup-box {
+  margin: 70px auto;
 }
 
 .map-box {
