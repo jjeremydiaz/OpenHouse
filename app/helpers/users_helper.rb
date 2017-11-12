@@ -39,7 +39,7 @@ module UsersHelper
     return if update_picture(:profile_picture)
     return if update_picture(:house_picture)
     return if update_picture(:more_picture)
-    unless amenity_params.empty?
+    unless params[:amenity_list].nil?
         @user.amenity_list.update_attributes(amenity_params)
         @user.amenity_list.save!
     end
