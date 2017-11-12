@@ -7,7 +7,7 @@ class UsersController < ApplicationController
     end
 
     def amenity_params
-        params.require(:amenity_list).permit(:wifi, :couch)
+        params.require(:amenity_list).permit(:wifi, :couch, :tv)
     end
 
     def new
