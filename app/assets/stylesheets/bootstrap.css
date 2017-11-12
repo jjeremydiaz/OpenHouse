@@ -142,16 +142,17 @@
   padding: 5px;
 }
 
+.listing-details-text {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
 .listing-address {
-  margin-top: 8px;
-  margin-bottom: 8px;
   font-weight: 400;
   color: #2FB2C2;
 }
 
 .listing-price {
-  margin-top: 8px;
-  margin-bottom: 8px;
   font-weight: 200;
   color: #6e6e6e;
 }
