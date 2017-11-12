@@ -57,7 +57,7 @@ class UsersController < ApplicationController
 
     def update
         @user = current_user
-        update_user_fields and redirect_to root_path
+        update_user_fields and redirect_to user_path(@user)
     end
     
     def destroy
