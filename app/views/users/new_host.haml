@@ -14,6 +14,7 @@
 <br>
 - if @user.profile_picture and File.exists? Rails.root.join('app', 'assets', 'images', 'user_images', @user.email, @user.profile_picture)
   = image_tag "user_images/#{@user.email}/#{@user.profile_picture}", height: '150', weight: '20',hspace: '150', vspace: '10', id: :profile_picture, align: "right"
+  = puts(Cloudinary::Uploader.upload("user_images/#{@user.email}/#{@user.profile_picture}"))
 - else
   = image_tag "user.png", height: '150', weight: '20',hspace: '400', vspace: '10', id: :profile_picture, align: "right"
 

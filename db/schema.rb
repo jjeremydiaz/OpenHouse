@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171108004422) do
+ActiveRecord::Schema.define(version: 20171111065540) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,12 +39,16 @@ ActiveRecord::Schema.define(version: 20171108004422) do
     t.string  "billing_first_name"
     t.string  "billing_last_name"
     t.string  "price"
-    t.string  "profile_picture"
-    t.string  "house_picture"
-    t.string  "house_images",           default: [], array: true
-    t.string  "available_time"
     t.float   "latitude"
     t.float   "longitude"
+    t.string  "profile_picture"
+    t.string  "house_picture"
+    t.string  "house_images",             default: [], array: true
+    t.string  "available_time"
+    t.string  "cloud_profile_picture"
+    t.string  "cloud_profile_picture_id"
+    t.string  "cloud_house_picture"
+    t.string  "cloud_house_picture_id"
   end
 
 end

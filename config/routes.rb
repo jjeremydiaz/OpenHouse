@@ -71,6 +71,18 @@ Rails.application.routes.draw do
   get '/users/new_host', to: 'users#new_host', as: 'new_user_host'
   patch '/users/new_billing/:id', to: 'users#update_billing', as: 'update_user_billing'
   patch '/users/new_host/:id', to: 'users#update_host', as: 'update_user_host'
+  #patch '/users/:id', to: 'users#update_house_picture', as: 'update_house_picture'
+  #patch '/users/:id', to: 'users#update_house_picture', as: 'update_house_picture'
   
   resources :users, :except => [:edit]
+  
+  # Used to differentiate between updating house and profile pictures
+  resources :users do
+    collection do
+      post '/update_house_picture/:id', to: 'users#update_house_picture', as: 'update_house_picture'
+      post '/update_profile_picture/:id', to: 'users#update_profile_picture', as: 'update_profile_picture'
+      post '/update_multiple_pictures/:id', to: 'users#update_multiple_pictures', as: 'update_multiple_pictures'
+    end
+  end
+  
 end
