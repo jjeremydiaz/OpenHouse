@@ -58,8 +58,8 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
   
-  
   get '/', to: 'main#show', as: 'root'
+  get '/requests', to: 'requests#index'
   get '/search', to: 'main#search', as: 'search'
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
@@ -75,4 +75,6 @@ Rails.application.routes.draw do
   get '/us', to: 'main#us', as: 'us'
   get '/about', to: 'main#about', as: 'about'
   resources :users, :except => [:edit]
+  resources :messages, only: [:new, :create]
+  resources :requests, only: [:index, :show]
 end

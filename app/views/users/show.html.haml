@@ -99,7 +99,8 @@
               %option{:value => i} #{i}
               - i += 1
         %div
-          %input.btn.btn-warning#reserve-button{:value => 'Reserve', :onclick => 'alert("Your reservation had been made.")'}
+          %a{:href => new_message_path(recipient_id: @user)}
+            %input.btn.btn-warning#reserve-button{:value => 'Reserve'}
 
 -if @success == false
   %div.center

@@ -1,0 +1,15 @@
+<h1>Chatting with <%= @request.with(current_user).name %></h1>
+
+<div id="request-main">
+  <div id="request-body">
+    <%= render @request.messages %>
+  </div>
+
+  <%= form_for @message do |f| %>
+    <%= hidden_field_tag 'request_id', @request.id %>
+    <%= f.label :body %>
+    <%= f.text_area :body %>
+
+    <%= f.submit %>
+  <% end %>
+</div>

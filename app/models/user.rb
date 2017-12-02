@@ -5,6 +5,9 @@ class User < ActiveRecord::Base
     validates :available_time_end, format: {with: /\A\d\d:\d\d\z/ }
     has_secure_password
     has_one :amenity_list
+    has_many :sent_requests, class_name: 'Request', foreign_key: 'sender_id'
+    has_many :received_requests, class_name: 'Request', foreign_key: 'recipient_id'
+    has_many :messages, dependent: :destroy
 
     # Geolocation (NOTE: must call save on the object to trigger the coordinate creation)
     geocoded_by :full_street_address   # can also be an IP address

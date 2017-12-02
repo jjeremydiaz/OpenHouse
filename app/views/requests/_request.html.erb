@@ -1,0 +1,8 @@
+<div>
+  Chatting with <%= request.with(current_user).name %>
+  <br>
+  <em><%= request.personal_messages.last.body.truncate(50) %></em>
+  <br>
+  <%= link_to 'View Request', request_path(request) %>
+  <hr>
+</div>
