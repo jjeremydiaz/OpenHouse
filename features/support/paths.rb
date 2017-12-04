@@ -27,6 +27,9 @@ module NavigationHelpers
 
     when /^the edit page$/
       edit_user_path
+    
+    when /^the messages page for (?:user )?"(.*)"$/
+      conversation_messages_path(User.find_by(email: $1))
 
     when /^the (?:user )?profile page for (?:user )?"(.*)"$/
       user_path(User.find_by(email: $1))
